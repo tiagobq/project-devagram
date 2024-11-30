@@ -16,3 +16,4 @@ export default (
     }
     return res.status(405).json({erro : 'Metodo informado nao e valido'});
 }
+
