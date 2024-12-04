@@ -22,4 +22,8 @@ async (req: NextApiRequest, res : NextApiResponse) => {
     mongoose.connection.on('error', error => console.log(`ocorreu erro ao conectar no banco de dados`))
     await mongoose.connect(DB_CONEXAO_STRING);
 
+    // agora posso seguir para o endpoint, pois estou conectado
+    // no banco
+    return handler(req, res);
+
 }
