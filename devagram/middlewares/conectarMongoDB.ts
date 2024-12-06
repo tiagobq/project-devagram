@@ -19,7 +19,7 @@ async (req: NextApiRequest, res : NextApiResponse) => {
         return res.status(500).json({ erro : 'ENV de configuracao do banco, nao informado'});
     }
     mongoose.connection.on('connected', () => console.log('Banco de dados conectado'));
-    mongoose.connection.on('error', error => console.log(`ocorreu erro ao conectar no banco de dados`))
+    mongoose.connection.on('error', error => console.log(`ocorreu erro ao conectar no banco: ${error}`));
     await mongoose.connect(DB_CONEXAO_STRING);
 
     // agora posso seguir para o endpoint, pois estou conectado
