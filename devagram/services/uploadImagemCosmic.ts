@@ -1,10 +1,10 @@
 import { createBucketClient } from "@cosmicjs/sdk";
 import multer from "multer";
 
-const {
-    BUCKET_SLUG=
-    READ_KEY=
-    WRITE_KEY} = process.env;
+const {BUCKET_SLUG, READ_KEY, WRITE_KEY 
+    } = process.env;
+
+    console.log()
     
     const bucketDevagram = createBucketClient({
         bucketSlug: BUCKET_SLUG as string,
