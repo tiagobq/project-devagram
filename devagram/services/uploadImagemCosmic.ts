@@ -24,7 +24,7 @@ const {BUCKET_SLUG, READ_KEY, WRITE_KEY
 
             if(req.url && req.url.includes('publicacao')){
                 return await bucketDevagram.media.insertOne({media : media_object,
-                    folder: "avatar",
+                    folder: "publicacao",
                 });
             }else{
                 return await bucketDevagram.media.insertOne({media : media_object,
