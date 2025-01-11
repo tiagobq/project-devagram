@@ -1,5 +1,5 @@
 import type {NextApiRequest, NextApiResponse} from 'next';
-import {validarTokenJWT} from '../../middlewares/validarTokenJWT';
+import {validarTokenJWT} from '../../middlewares/validarTokenJWT'
 import { conectarMongoDB } from "@/middlewares/conectarMongoDB"; 
 import type { RespostaPadraoMsg } from '../../types/RespostaPadraoMsg';
 import { UsuarioModel } from '@/models/UsuarioModel';
