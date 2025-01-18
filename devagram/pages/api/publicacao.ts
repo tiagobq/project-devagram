@@ -6,6 +6,7 @@ import { upload, uploadImagemCosmic } from "@/services/uploadImagemCosmic";
 import nc from 'next-connect';
 import {PublicacaoModel} from '../../models/PublicacaoModel';
 import {UsuarioModel} from '../../models/UsuarioModel';
+import md5 from 'md5';
 
 const handler = 
     nc() 
