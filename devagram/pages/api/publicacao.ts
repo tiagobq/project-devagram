@@ -11,7 +11,7 @@ import md5 from 'md5';
 const handler = 
     nc() 
     .use(upload.single("file")) 
-    .post(async (req : any, res: NextApiResponse<RespostaPadraoMsg>) => {
+    .post(async (req : any, res: NextApiResponse<RespostaPadraoMsg> | any) => {
         
         try{ 
             const {userId} = req.query;
@@ -39,6 +39,9 @@ const handler =
             foto : image.media.url,
             data : new Date()
         }
+
+        usuario.publicacoes++;
+        await UsuarioModel.findByIdAndUpdate({_id : usuario._id}, usuario)
 
         await PublicacaoModel.create(publicacao);
 
