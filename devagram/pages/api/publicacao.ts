@@ -7,6 +7,7 @@ import nc from 'next-connect';
 import {PublicacaoModel} from '../../models/PublicacaoModel';
 import {UsuarioModel} from '../../models/UsuarioModel';
 import md5 from 'md5';
+import { politicaCORS } from "@/middlewares/politicaCORS";
 
 const handler = 
     nc() 
@@ -58,4 +59,4 @@ const handler =
         }
     };
 
-    export default validarTokenJWT(conectarMongoDB(handler));
+    export default politicaCORS (validarTokenJWT(conectarMongoDB(handler)));

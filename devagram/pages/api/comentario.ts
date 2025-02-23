@@ -5,6 +5,7 @@ import { conectarMongoDB } from "@/middlewares/conectarMongoDB";
 import { PublicacaoModel } from "@/models/PublicacaoModel";
 import { UsuarioModel } from "@/models/UsuarioModel";
 import { SeguidorModel } from "@/models/SeguidorModel";
+import { politicaCORS } from "@/middlewares/politicaCORS";
 
 const comentarioEndpoint = async (req : NextApiRequest, res : NextApiResponse<RespostaPadraoMsg>) =>{
 try{
@@ -40,4 +41,4 @@ try{
     return res.status(500).json({ erro: 'ocorreu um erro ao comentar a publicacao'});
 }
 };
-export default validarTokenJWT(conectarMongoDB(comentarioEndpoint));
+export default politicaCORS(validarTokenJWT(conectarMongoDB(comentarioEndpoint)));
